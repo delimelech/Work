@@ -1,0 +1,28 @@
+{
+  "patterns": [
+    {
+      "name": "Selenium Session Error",
+      "search_strings": [
+        "Could not start a new session. Response code 500"
+      ],
+      "severity": "critical",
+      "category": "Selenium/WebDriver",
+      "description": "Failed to create new Selenium session"
+    },
+    {
+      "name": "Chrome Instance Crash",
+      "search_strings": [
+        "Chrome instance exited"
+      ],
+      "severity": "critical",
+      "category": "Browser/Infrastructure",
+      "description": "Chrome browser crashed or became unreachable"
+    }
+  ],
+  "settings": {
+    "case_sensitive": false,
+    "max_line_length": 500,
+    "context_lines_before": 2,
+    "context_lines_after": 2
+  }
+}

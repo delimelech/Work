@@ -1,0 +1,139 @@
+{
+  "comment": "Clean team configuration for QA scanning tools",
+  "description": "Maps teams to their owned Jenkins jobs/folders for stability and infrastructure scanning",
+
+  "base_paths": {
+    "allure_reports": "Z:\\allure_reports",
+    "console_logs": "Z:\\console_logs"
+  },
+
+  "teams": {
+    "servicedesk_team": {
+      "name": "ServiceDesk Team",
+      "jobs": [
+        "ADA_Survey_Automation_docker",
+        "Level_One_E2E_Automation_docker",
+        "Remediation_E2E_Automation_PV_docker",
+        "InstallAppsE2ETest_docker",
+        "Manual_Runbooks_Automation_docker",
+        "SDA_E2E_Automation_docker",
+        "IQ_Assist_docker"
+      ]
+    },
+
+    "frontend_team": {
+      "name": "Frontend Team",
+      "jobs": [
+        "UI_Tests",
+        "Frontend_E2E",
+        "Web_Interface",
+        "Dashboard_Tests",
+        "Login_UI",
+        "User_Profile_UI",
+        "Settings_Page",
+        "Frontend",
+        "WebUI",
+        "Dashboard"
+      ]
+    },
+
+    "backend_api_team": {
+      "name": "Backend API Team",
+      "jobs": [
+        "API_Tests",
+        "REST_API",
+        "GraphQL_Tests",
+        "Microservices_Tests",
+        "Backend_Integration",
+        "Service_Layer",
+        "API",
+        "Backend",
+        "Services"
+      ]
+    },
+
+    "database_team": {
+      "name": "Database Team",
+      "jobs": [
+        "Database_Tests",
+        "SQL_Tests",
+        "Migration_Tests",
+        "Data_Integrity",
+        "DB_Performance",
+        "Database",
+        "SQL",
+        "Migrations"
+      ]
+    },
+
+    "authentication_team": {
+      "name": "Authentication & Security Team",
+      "jobs": [
+        "Authentication_Tests",
+        "Login_Tests",
+        "SSO_Tests",
+        "OAuth_Tests",
+        "Security_Tests",
+        "Authorization_Tests",
+        "User_Management",
+        "Auth",
+        "Security",
+        "Login"
+      ]
+    },
+
+    "infrastructure_team": {
+      "name": "Infrastructure & DevOps Team",
+      "jobs": [
+        "Infrastructure_Tests",
+        "Performance_Tests",
+        "Load_Tests",
+        "Stress_Tests",
+        "Network_Tests",
+        "Infrastructure",
+        "Performance",
+        "LoadTest"
+      ]
+    },
+
+    "data_pipeline_team": {
+      "name": "Data Pipeline Team",
+      "jobs": [
+        "Data_Flow_Tests",
+        "ETL_Tests",
+        "Pipeline_Tests",
+        "Data_Validation",
+        "Stream_Processing",
+        "DataFlow",
+        "Pipeline",
+        "ETL"
+      ]
+    },
+
+    "mobile_team": {
+      "name": "Mobile Team",
+      "jobs": [
+        "Mobile_Tests",
+        "iOS_Tests",
+        "Android_Tests",
+        "Mobile_API",
+        "Mobile",
+        "iOS",
+        "Android"
+      ]
+    },
+
+    "integration_team": {
+      "name": "Integration Team",
+      "jobs": [
+        "Integration_Tests",
+        "Third_Party_Integration",
+        "External_API_Tests",
+        "Webhook_Tests",
+        "Integration",
+        "ThirdParty",
+        "External"
+      ]
+    }
+  }
+}

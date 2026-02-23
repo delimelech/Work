@@ -1,0 +1,13 @@
+# Core AI functionality
+anthropic>=0.40.0
+
+# No additional dependencies required!
+# The monitoring system uses only Python standard library for:
+# - Email notifications (smtplib)
+# - Microsoft Teams webhooks (urllib)
+# - JSON configuration (json)
+# - File operations (pathlib)
+# - Everything else!
+
+# Optional: If you want to add Slack support later
+# slack-sdk>=3.0.0
