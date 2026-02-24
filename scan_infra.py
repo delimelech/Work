@@ -906,6 +906,18 @@ def main() -> int:
         type=Path,
         help="Output HTML report path (auto-generated if not specified)"
     )
+    parser.add_argument(
+        "--days",
+        type=int,
+        default=7,
+        help="Filter logs by last N days (default: 7)"
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path("reports"),
+        help="Output directory for HTML reports (default: reports)"
+    )
 
     args = parser.parse_args()
 
@@ -979,7 +991,7 @@ def main() -> int:
     report = build_report(
         scan_path,
         patterns_config,
-        days=DAYS_FILTER,
+        days=args.days,
         workers=MAX_WORKERS,
         team_jobs=team_jobs
     )
@@ -1009,9 +1021,9 @@ def main() -> int:
     if args.html:
         html_path = args.html.resolve()
     else:
-        # Ensure reports folder exists
-        reports_dir = Path("reports")
-        reports_dir.mkdir(exist_ok=True)
+        # Ensure output directory exists
+        reports_dir = args.output_dir
+        reports_dir.mkdir(parents=True, exist_ok=True)
 
         if scan_mode == "team":
             html_path = reports_dir / f"infra_{args.team}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"

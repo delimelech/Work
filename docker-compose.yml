@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  scanner:
+    build: .
+    image: qa-scanner:latest
+    container_name: qa-scanner
+    volumes:
+      # Mount your network drives to /data
+      - /path/to/allure_reports:/data/allure_reports:ro
+      - /path/to/console_logs:/data/console_logs:ro
+
+      # Mount output directory for HTML reports
+      - ./output:/output
+
+      # Mount history and cache for persistence
+      - ./.history:/.history
+      - ./.cache:/.cache
+
+      # Optional: Mount custom configuration
+      - ./teams.json:/app/teams.json:ro
+      - ./console_log_patterns.json:/app/console_log_patterns.json:ro
+
+    # Example command - override with your query
+    command: ["Scan stability for Data-Flow-Pipeline for 30 days"]
+
+    environment:
+      - TZ=America/New_York
+
+# Alternative: Run as a one-off container
+# docker-compose run --rm scanner "Scan stability for Data-Flow-Pipeline for 30 days"

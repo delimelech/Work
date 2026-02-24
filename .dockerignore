@@ -1,24 +1,14 @@
+# Git
+.git
+.gitignore
+
 # Python
-__pycache__/
+__pycache__
 *.py[cod]
 *$py.class
 *.so
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+*.egg-info
 
 # Virtual Environment
 venv/
@@ -31,11 +21,7 @@ ENV/
 *.swp
 *.swo
 *~
-
-# Sensitive Configuration Files
-monitor_config.json
-teams_config.json
-.env
+.claude/
 
 # Runtime Data
 .history/
@@ -43,14 +29,14 @@ teams_config.json
 logs/
 *.log
 
-# Generated Reports (optional - you may want to commit sample reports)
+# Generated Reports
+reports/
+output/
 *_failure_report.html
 incident_*.txt
 weekly_summary_*.txt
 daily_summary_*.txt
 jira_tickets.md
-reports/
-output/
 
 # Test artifacts
 .pytest_cache/
@@ -67,3 +53,15 @@ desktop.ini
 *.temp
 *.bak
 *.backup
+
+# Documentation (optional - keep if needed in container)
+DOCKER_README.md
+QUICK_REFERENCE.md
+
+# Batch files (Windows specific)
+*.bat
+
+# Docker files (don't include in image)
+Dockerfile
+docker-compose.yml
+.dockerignore

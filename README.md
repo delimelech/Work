@@ -1,5 +1,7 @@
 # QA Scanning Tools - Refactored Documentation
 
+🐳 **NEW: Docker Support Available!** See [DOCKER_README.md](DOCKER_README.md) for containerized deployment with conversational interface.
+
 This document describes the refactored QA scanning codebase, which has been simplified for better maintainability and clarity.
 
 ## Overview

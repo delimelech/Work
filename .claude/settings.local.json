@@ -4,7 +4,8 @@
       "Bash(python:*)",
       "Bash(ls:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(cd C:\\\\DOCS\\\\Riverbed\\\\Cursor\\\\AI Testing\\\\Scan_Allure_Reports:*)"
     ]
   }
 }

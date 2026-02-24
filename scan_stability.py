@@ -1131,6 +1131,18 @@ def main() -> int:
         action="store_true",
         help="Force fresh scan, ignore cached results"
     )
+    parser.add_argument(
+        "--days",
+        type=int,
+        default=30,
+        help="Filter reports by last N days (default: 30)"
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path("reports"),
+        help="Output directory for HTML reports (default: reports)"
+    )
 
     args = parser.parse_args()
 
@@ -1243,9 +1255,9 @@ def main() -> int:
     if args.html:
         html_path = args.html.resolve()
     else:
-        # Ensure reports folder exists
-        reports_dir = Path("reports")
-        reports_dir.mkdir(exist_ok=True)
+        # Ensure output directory exists
+        reports_dir = args.output_dir
+        reports_dir.mkdir(parents=True, exist_ok=True)
 
         if scan_mode == "team":
             html_path = reports_dir / f"stability_{args.team}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
